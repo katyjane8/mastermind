@@ -17,8 +17,7 @@ module Messages
   end
 
   def won_game
-    puts "Congratulations! You guessed the sequence 'GRRB' in 8 guesses over 4 minutes,
-    22 seconds.
+    puts "Congratulations! You guessed the sequence  in #{@count} guesses over #{@start - @finish}
     Do you want to (p)lay again or (q)uit?"
   end
 
@@ -28,6 +27,7 @@ module Messages
 
   def quit_commands(command)
     %w(q Q quit Quit QUIT).include?(command)
+    exit
     puts `clear`
   end
 
