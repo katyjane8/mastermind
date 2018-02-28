@@ -33,7 +33,7 @@ module Messages
 
   def game_over
     puts "Sorry, you lose!"
-    puts 'q'
+    exit
     puts `clear`
   end
 
