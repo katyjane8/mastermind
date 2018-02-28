@@ -34,16 +34,13 @@ class Game
     elsif input.length < 4 || input.length > 4
       guess_error
       start_game
-    elsif input != @result
+    else
       loop do
         if input[0] == @result[0] || input[1] == @result[1] || input[2] == @result[2] || input[3] == @result[3]
           @count += 1
           puts "# '#{input}' has 1 of the correct elements with 1 in the correct positions
           You've taken #{@count} guesses"
           input = gets.chomp
-        elsif
-          @count >= 4
-          game_over
         elsif input[0] == @result[0] && input[1] == @result[1] || input[1] == @result[1] && input[2] == @result[2] || input[2] == @result[2] && input[3] == @result[3]
           @count += 1
           puts "# '#{input}' has 2 of the correct elements with 2 in the correct positions
@@ -56,6 +53,9 @@ class Game
           input = gets.chomp
         elsif input == "cheat"
           puts "Answer was #{@result}! Better luck next time."
+          game_over
+        elsif
+          @count >= 4
           game_over
         else input != @result
           @count += 1
