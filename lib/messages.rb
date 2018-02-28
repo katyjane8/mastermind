@@ -38,6 +38,6 @@ module Messages
   end
 
   def guess_error
-    puts "Please enter correct guess length"
+    puts "Please enter four letters"
   end
 end

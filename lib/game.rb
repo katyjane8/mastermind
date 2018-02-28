@@ -31,7 +31,7 @@ class Game
       when "p"||"P" then start_game
       when quit_commands(input) then exit
       end
-    elsif input.length != 4
+    elsif input.length < 4 || input.length > 4
       guess_error
       start_game
     else
